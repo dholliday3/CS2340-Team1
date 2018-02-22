@@ -85,7 +85,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-                    attemptLogin();
+                    attemptRegister();
                     return true;
                 }
                 return false;
@@ -98,9 +98,8 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
-                if (isEmailValid(_userEnteredEmail) && isPasswordValid(_userEnteredPassword)
-                        && passMatch(_userEnteredPassword, _userConfirmedPassword)) {
+                attemptRegister();
+                if (isEmailValid(_userEnteredEmail) && isPasswordValid(_userEnteredPassword)) {
                     Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
                     startActivity(intent);
                 }
@@ -169,7 +168,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
-    private void attemptLogin() {
+    private void attemptRegister() {
         if (mAuthTask != null) {
             return;
         }
@@ -193,8 +192,8 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
             cancel = true;
         }
 
-        if (!TextUtils.isEmpty(_userConfirmedPassword) && !isPasswordValid(_userConfirmedPassword)
-                && (_userEnteredPassword.equals(_userConfirmedPassword))) {
+
+        if (!(_userEnteredPassword.equals(_userConfirmedPassword))) {
             mPasswordView.setError("Passwords do not match");
             focusView = mPasswordView;
             cancel = true;
@@ -229,12 +228,7 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             valid = false;
         } else {
-            valid = false;
-            for (int i = 0; i < DUMMY_CREDENTIALS.length; i++) {
-                if (DUMMY_CREDENTIALS[i].contains(email)) {
-                    valid = true;
-                }
-            }
+            valid = true;
         }
         return valid;
     }
@@ -244,25 +238,20 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
         if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
             valid = false;
         } else {
-            valid = false;
-            for (int i = 0; i < DUMMY_CREDENTIALS.length; i++) {
-                if (DUMMY_CREDENTIALS[i].contains(password)) {
-                    valid = true;
-                }
-            }
+            valid = true;
         }
         return valid;
     }
 
-    private boolean passMatch(String pass1, String pass2) {
-        boolean match;
-        if (pass1.equals(pass2)) {
-            match = true;
-        } else {
-            match = false;
-        }
-        return match;
-    }
+//    private boolean passMatch(String pass1, String pass2) {
+//        boolean match;
+//        if (pass1.equals(pass2)) {
+//            match = true;
+//        } else {
+//            match = false;
+//        }
+//        return match;
+//    }
 
     /**
      * Shows the progress UI and hides the login form.
