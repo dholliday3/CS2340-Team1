@@ -32,6 +32,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="m4.cs2340.shelterme.LoginActivity" />
         </activity>
+        <activity
+            android:name=".RegistrationActivity"
+            android:label="@string/title_activity_registration"></activity>
     </application>
 
 </manifest>

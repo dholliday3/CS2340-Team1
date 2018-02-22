@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="m4.cs2340.shelterme.LoginActivity">
+    tools:context="m4.cs2340.shelterme.RegistrationActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -18,15 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="126dp"
-        android:fontFamily="dosis"
-        android:gravity="center"
-        android:text="@string/shelterme"
-        android:textColor="@color/colorPrimary"
-        android:textSize="32sp" />
 
     <ScrollView
         android:id="@+id/login_form"
@@ -62,7 +53,7 @@
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_password"
+                    android:hint="Password"
                     android:imeActionId="6"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
@@ -72,32 +63,43 @@
 
             </android.support.design.widget.TextInputLayout>
 
-            <Button
-                android:id="@+id/email_sign_in_button"
-                style="?android:textAppearanceSmall"
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/confirmPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Confirm Password"
+                    android:imeActionId="6"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+            </android.support.design.widget.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/Admin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_sign_in"
-                android:textStyle="bold"
-                tools:text="Login" />
+                android:text="Admin" />
 
             <Button
-                android:id="@+id/register_button"
+                android:id="@+id/register_button2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/register"
-                android:textStyle="bold"
                 tools:text="Register" />
 
             <Button
                 android:id="@+id/cancel_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/cancel" />
+                android:text="Cancel" />
 
         </LinearLayout>
-
     </ScrollView>
 </LinearLayout>
