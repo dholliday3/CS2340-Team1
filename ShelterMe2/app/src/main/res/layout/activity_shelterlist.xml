@@ -4,10 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-=======
-    xmlns:tools="http://schemas.android.com/tools"
->>>>>>> origin/ally
     tools:context="m4.cs2340.shelterme.ShelterListActivity">
 
     <ListView

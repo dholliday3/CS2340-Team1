@@ -28,10 +28,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/ally
         Button searchButton = (Button) findViewById(R.id.search_button);
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
