@@ -35,6 +35,14 @@
         <activity
             android:name=".RegistrationActivity"
             android:label="@string/title_activity_registration"></activity>
+
+        <activity
+            android:name=".ShelterListActivity"
+            android:label="ShelterListActivity"></activity>
+
+        <activity
+            android:name=".ShelterInfoActivity"
+            android:label="ShelterInfoActivity"></activity>
     </application>
 
 </manifest>
