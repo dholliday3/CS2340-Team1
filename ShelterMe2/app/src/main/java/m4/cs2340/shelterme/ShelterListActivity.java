@@ -2,6 +2,7 @@ package m4.cs2340.shelterme;
 
 import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
@@ -14,13 +15,15 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 /**
  * Created by Ally Liu on 2/26/2018.
  */
 
-public class ShelterListActivity extends Activity {
+public class    ShelterListActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +31,22 @@ public class ShelterListActivity extends Activity {
         setContentView(R.layout.activity_shelterlist);
 
         //hardcoded shelters
-        String[] shelters = {"Shelter 1",
+//        String[] shelters = {"Shelter 1",
+//                "Shelter 2",
+//                "Shelter 3",
+//                "Shelter 5",
+//                "Shelter 6",
+//                "Shelter 7",
+//                "Shelter 8",
+//                "Shelter 9"};
+        final ArrayList<String> shelters = new ArrayList<String>(Arrays.asList("Shelter 1",
                 "Shelter 2",
                 "Shelter 3",
                 "Shelter 5",
                 "Shelter 6",
                 "Shelter 7",
                 "Shelter 8",
-                "Shelter 9"};
+                "Shelter 9"));
         //converts the string array into list object
         ListAdapter shelterListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, shelters);
         ListView shelterListView = (ListView) findViewById(R.id.shelterList);
@@ -44,10 +55,12 @@ public class ShelterListActivity extends Activity {
         shelterListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
-                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        String shelterClicked = String.valueOf(adapterView.getItemAtPosition(i)); //gives the strong value of the shelter clicked (can be used in about)
+                    public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                        String shelterClicked = String.valueOf(adapterView.getItemAtPosition(position)); //gives the strong value of the shelter clicked (can be used in about)
                         //Toast.makeText(ShelterListActivity.this, shelterClicked, Toast.LENGTH_LONG).show();
+                        String shelter = shelters.get(position);
                         Intent intent = new Intent(ShelterListActivity.this, ShelterInfoActivity.class);
+                        intent.putExtra("name", shelter);
                         startActivity(intent);
                     }
                 }

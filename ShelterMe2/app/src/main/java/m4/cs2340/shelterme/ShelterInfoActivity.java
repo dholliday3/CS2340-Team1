@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Button;
 
@@ -22,6 +23,12 @@ public class ShelterInfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
+        //Code that gets information from the ListView.
+        String shelterName = this.getIntent().getExtras().getString("name");
+        TextView nameTV = (TextView) findViewById(R.id.shelterName_textview);
+        nameTV.setText(shelterName);
+
+        //Back button controller.
         Button backButton = (Button) findViewById(R.id.backToList_button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -8,7 +8,7 @@
     tools:context="m4.cs2340.shelterme.ShelterInfoActivity"
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/shelterName_textview"
         android:layout_width="342dp"
         android:layout_height="149dp"
         android:gravity="center"
