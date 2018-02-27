@@ -29,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        Button searchButton = (Button) findViewById(R.id.search_button);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ShelterListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
