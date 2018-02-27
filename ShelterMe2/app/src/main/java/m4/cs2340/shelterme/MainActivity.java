@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ShelterListAcivity.class);
+                Intent intent = new Intent(MainActivity.this, ShelterListActivity.class);
                 startActivity(intent);
             }
         });
