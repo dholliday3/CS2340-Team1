@@ -3,7 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ShelterMe2.iml" filepath="$PROJECT_DIR$/ShelterMe2.iml" />
+<<<<<<< HEAD
       <module fileurl="file://C:\Users\jason\OneDrive\Documents\Georgia Tech\Sophomore Year 2017-2018\SPRING 17-18\CS 2340\CS2340-Team1\ShelterMe2\ShelterMe2.iml" filepath="C:\Users\jason\OneDrive\Documents\Georgia Tech\Sophomore Year 2017-2018\SPRING 17-18\CS 2340\CS2340-Team1\ShelterMe2\ShelterMe2.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/ShelterMe2.iml" filepath="$PROJECT_DIR$/ShelterMe2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+>>>>>>> origin/jung
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://C:\Users\jason\OneDrive\Documents\Georgia Tech\Sophomore Year 2017-2018\SPRING 17-18\CS 2340\CS2340-Team1\ShelterMe2\app\app.iml" filepath="C:\Users\jason\OneDrive\Documents\Georgia Tech\Sophomore Year 2017-2018\SPRING 17-18\CS 2340\CS2340-Team1\ShelterMe2\app\app.iml" />
     </modules>
