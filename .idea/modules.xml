@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/CS2340-Team1.iml" filepath="$PROJECT_DIR$/.idea/CS2340-Team1.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/ShelterMe2/app/src/androidTest/androidTest.iml" filepath="$PROJECT_DIR$/ShelterMe2/app/src/androidTest/androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShelterMe2/app/src/main/main.iml" filepath="$PROJECT_DIR$/ShelterMe2/app/src/main/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShelterMe2/app/src/test/test.iml" filepath="$PROJECT_DIR$/ShelterMe2/app/src/test/test.iml" />
+>>>>>>> 2e9a08aaf67d707f26d7664d480a817a2036304f
     </modules>
   </component>
 </project>

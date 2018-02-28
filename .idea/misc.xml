@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+>>>>>>> 2e9a08aaf67d707f26d7664d480a817a2036304f
   <component name="masterDetails">
     <states>
       <state key="ProjectJDKs.UI">
         <settings>
+<<<<<<< HEAD
           <last-edited>Android API 26 Platform</last-edited>
+=======
+          <last-edited>1.8</last-edited>
+>>>>>>> 2e9a08aaf67d707f26d7664d480a817a2036304f
           <splitter-proportions>
             <option name="proportions">
               <list>
