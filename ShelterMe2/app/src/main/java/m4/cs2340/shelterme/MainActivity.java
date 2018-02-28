@@ -28,5 +28,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button searchButton = (Button) findViewById(R.id.search_button);
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ShelterListActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+    //Back button. NOTE: When this back button is pressed, it takes user out of the app.
+    // May want to fix this in the future.
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        this.finish();
+        return true;
     }
 }
