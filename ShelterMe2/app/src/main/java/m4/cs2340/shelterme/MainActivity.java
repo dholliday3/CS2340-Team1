@@ -37,4 +37,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    //Back button. NOTE: When this back button is pressed, it takes user out of the app.
+    // May want to fix this in the future.
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        this.finish();
+        return true;
+    }
 }

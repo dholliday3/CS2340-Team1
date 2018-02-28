@@ -31,6 +31,11 @@ public class ShelterListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shelterlist);
 
+        //Toolbar stuff.
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_shelterlist);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //Hard-coded shelters. Need to put in real values.
         final ArrayList<String> shelters = new ArrayList<String>(Arrays.asList("Shelter 1",
                 "Shelter 2",
@@ -40,7 +45,7 @@ public class ShelterListActivity extends AppCompatActivity {
                 "Shelter 7",
                 "Shelter 8",
                 "Shelter 9"));
-        
+
         //converts the string array into list object
         ListAdapter shelterListAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, shelters);
         ListView shelterListView = (ListView) findViewById(R.id.shelterList);
@@ -61,8 +66,11 @@ public class ShelterListActivity extends AppCompatActivity {
                 }
         );
     }
+    //Back button.
     @Override
-    public void onBackPressed() {
-        return;
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        this.finish();
+        return true;
     }
 }

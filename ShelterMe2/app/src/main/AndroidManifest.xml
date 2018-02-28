@@ -39,11 +39,13 @@
 
         <activity
             android:name=".ShelterListActivity"
-            android:label="Shelter List"></activity>
+            android:label="Shelter List"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <activity
             android:name=".ShelterInfoActivity"
-            android:label="ShelterInfoActivity"></activity>
+            android:label="Shelter Info"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
