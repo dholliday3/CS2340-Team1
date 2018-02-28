@@ -31,7 +31,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -46,12 +48,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private static final int REQUEST_READ_CONTACTS = 0;
 
     /**
-     * A dummy authentication store containing known user names and passwords.
+     * An authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
      */
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world", "shark@week.com:boi45"
-    };
+    static Map<String, String> Credentials = new HashMap<>();
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
      */
@@ -68,6 +68,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      */
     private String _userEnteredEmail;
     private String _userEnteredPassword;
+
+    //protected ArrayList loginArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +97,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             @Override
             public void onClick(View view) {
                 attemptLogin();
-                if (isEmailValid(_userEnteredEmail) && isPasswordValid(_userEnteredPassword)) {
+                if (isLoginValid(_userEnteredEmail, _userEnteredPassword)) {
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
                 }
@@ -219,30 +221,49 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     }
 
     private boolean isEmailValid(String email) {
+        boolean valid = true;
+        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            valid = false;
+        }
+//        else {
+//            valid = false;
+//            //for (int i = 0; i < Credentials.size(); i++) {
+//            if (Credentials.contains(email)) {
+//                valid = true;
+//            //}
+//            }
+//        }
+        return valid;
+    }
+
+    private boolean isPasswordValid(String password) {
+        boolean valid = true;
+        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
+            valid = false;
+        }
+//        else {
+//            valid = false;
+//            for (int i = 0; i < Credentials.length; i++) {
+//                if (Credentials[i].contains(password)) {
+//                    valid = true;
+//                }
+//            }
+//        }
+        return valid;
+    }
+
+    private boolean isLoginValid(String email, String password) {
         boolean valid;
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             valid = false;
         } else {
             valid = false;
-            for (int i = 0; i < DUMMY_CREDENTIALS.length; i++) {
-                if (DUMMY_CREDENTIALS[i].contains(email)) {
+            //for (int i = 0; i < Credentials.size(); i++) {
+            if (Credentials.containsKey(email)) {
+                if (Credentials.get(email).equals(password)) {
                     valid = true;
                 }
-            }
-        }
-        return valid;
-    }
-
-    private boolean isPasswordValid(String password) {
-        boolean valid;
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            valid = false;
-        } else {
-            valid = false;
-            for (int i = 0; i < DUMMY_CREDENTIALS.length; i++) {
-                if (DUMMY_CREDENTIALS[i].contains(password)) {
-                    valid = true;
-                }
+                //}
             }
         }
         return valid;
@@ -368,7 +389,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
+            for (String credential : Credentials.keySet()) {
                 String[] pieces = credential.split(":");
                 if (pieces[0].equals(mEmail)) {
                     // Account exists, return true if the password matches.
