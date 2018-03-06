@@ -119,6 +119,8 @@ public class RegistrationActivity extends AppCompatActivity implements LoaderCal
             }
         });
 
+
+
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
