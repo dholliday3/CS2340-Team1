@@ -8,6 +8,10 @@
 /captures
 .externalNativeBuild
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c0b0f1a0bc174c302740f38a3d8ad97e681133bf
 # User-specific configurations
 .idea/libraries/
 .idea/workspace.xml
